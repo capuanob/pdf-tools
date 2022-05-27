@@ -33,9 +33,9 @@ RUN cp `ldd /usr/local/bin/afl-fuzz | grep so | sed -e '/^[^\t]/ d' | sed -e 's/
 
 FROM --platform=linux/amd64 ubuntu:20.04
 COPY --from=builder /usr/local/bin/afl-fuzz /afl-fuzz
-COPY --from=builder /gregorio/server/epdfinfo /epdfinfo
+COPY --from=builder /pdf-tools/server/epdfinfo /epdfinfo
 COPY --from=builder /deps /usr/lib
-COPY --from=builder /gregorio/corpus /tests
+COPY --from=builder /pdf-tools/corpus /tests
 
 env AFL_SKIP_CPUFREQ=1
 
