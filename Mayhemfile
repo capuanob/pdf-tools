@@ -1,7 +1,6 @@
-image: ghcr.io/capuanob/pdf-tools-fuzz:latest
 project: pdf-tools
 target: epdfinfo-fuzz
-tests:
+testsuite:
     - file://corpus
 
 cmds:
